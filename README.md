@@ -36,3 +36,10 @@ python scripts/parse_fispact.py results/fispact_output.txt
 
 # 3. Tritium retention (TMAP7)
 tmap7 < tmap7/DP_ODS.inp > results/tmap7_output.txt
+
+---
+
+## Note
+"CI runs on a dummy FISPACT output (fispact/test_output.txt). Replace with real output to validate activation in lab pipelines.”
+
+---
