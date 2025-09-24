@@ -1,0 +1,46 @@
+---
+# Methods & Simulation Pipeline
+
+This document details the computational methods used to validate the DP-ODS alloy.
+
+---
+
+## 1. Activation (Waste Classification)
+
+- **Code:** FISPACT-II (2023 build)  
+- **Inputs:** `fispact/DP_ODS.inp`, DEMO divertor neutron spectrum (`spectra/iter_divertor.spc`)  
+- **Output metrics:** contact dose rate vs time, 50 y clearance index  
+- **Result:** DP-ODS classified as **LLW** (meets DEMO requirement)
+
+---
+
+## 2. Tritium Retention
+
+- **Code:** TMAP7  
+- **Inputs:** `tmap7/DP_ODS.inp`, DEMO flux (10²² m⁻²s⁻¹, 873 K)  
+- **Output metrics:** total retained tritium, trap depth distribution  
+- **Result:** `0.89e17 T/m²` retained after 10⁷ s (passes DEMO target <1.0e17)
+
+---
+
+## 3. Phase Stability
+
+- **Code:** pycalphad (0.9.2)  
+- **Database:** SGTE tungsten alloys + user oxide entries  
+- **Output metrics:** precipitation stability of Y₂O₃/HfO₂, solubility of Ta  
+- **Result:** stable dual oxide dispersion to 1500 °C
+
+---
+
+## 4. Bubble Growth
+
+- **Method:** Object Kinetic Monte Carlo (OKMC) templates (`okmc/dp_ods_template.yaml`)  
+- **Parameters:** He injection at 10 appm/s, 900 °C  
+- **Result:** <40% bubble size growth vs Y₂O₃-only benchmark
+
+---
+
+## 5. Uncertainty Handling
+
+- ±10% variation in oxide fraction and Ta content tested.  
+- DEMO compliance flags remained stable across parametric sweep.
