@@ -1,0 +1,2 @@
+# AetherODS-Physics-Validated-DEMO-Ready-ODS-Tungsten-Alloy
+AetherODS is a high-performance, DEMO-ready oxide-dispersion-strengthened (ODS) tungsten alloy featuring a dual-phase Y₂O₃ + HfO₂ nanocomposite with Ta substitution. Designed for fusion reactor conditions, it achieves ultra-low tritium retention, superior mechanical stability, minimal helium bubble coarsening, and optimized manufacturing yield
